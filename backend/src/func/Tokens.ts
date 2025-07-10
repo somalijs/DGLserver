@@ -15,12 +15,10 @@ const Tokens = {
     });
     res.cookie(name, token, {
       path: '/',
-      domain:
-        process.env.NODE_ENV === 'production' ? process.env.DOMAIN : undefined,
-      httpOnly: process.env.NODE_ENV === 'production',
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
-      maxAge: 24 * 60 * 60 * 1000, // 24 hours
+      httpOnly: true,
+      secure: true,
+      sameSite: 'None',
+      maxAge: 86400000,
     });
     return token;
   },
