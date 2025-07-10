@@ -1,0 +1,32 @@
+const Enums = {
+  gender: ['male', 'female'],
+  profileRoles: ['admin', 'manager', 'staff'],
+  VerificationTypes: ['emailVerification'],
+  profiles: ['user', 'agent'],
+  models: [
+    'user',
+    'agent',
+    'verification',
+    'agent',
+    'bank',
+    'transaction',
+    'supplier',
+    'customer',
+    'payment',
+    'payout',
+  ],
+  logActions: [
+    'create',
+    'update',
+    'delete',
+    'login',
+    'logout',
+    'reset Password',
+  ],
+  currencies: ['USD', 'KSH'],
+  BankTypes: ['bank', 'drawer'],
+  transactionTypes: ['sale', 'transfer', 'payment', 'payout'],
+  paymentTypes: ['payment'],
+  paymentTypeModels: ['customer', 'supplier', 'agent'],
+};
+export default Enums;
