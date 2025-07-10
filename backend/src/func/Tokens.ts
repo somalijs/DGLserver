@@ -9,15 +9,17 @@ type Props = {
   error: boolean;
 };
 const Tokens = {
-  setCookie: ({ name, id, res }: setTokenType) => {
+  setCookie: ({ name, id, res }: any) => {
     const token = jwt.sign({ id }, process.env.JWT_SECRET as string, {
       expiresIn: '24h',
     });
     res.cookie(name, token, {
-      // path: '/',
-      httpOnly: false,
-      secure: false,
-      sameSite: 'lax',
+      path: '/',
+      domain:
+        process.env.NODE_ENV === 'production' ? process.env.DOMAIN : undefined,
+      httpOnly: process.env.NODE_ENV === 'production',
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
       maxAge: 24 * 60 * 60 * 1000, // 24 hours
     });
     return token;
