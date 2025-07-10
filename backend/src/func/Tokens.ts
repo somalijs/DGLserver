@@ -27,7 +27,7 @@ const Tokens = {
 
   getCookie: ({ name, res, req, error = true }: Props): string => {
     const token = req.cookies?.[name];
-    //   console.log('token', token);
+    console.log('token', token);
     if (error && !token) {
       res.status(401);
       throwError('Keys Are Missing');
