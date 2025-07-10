@@ -13,7 +13,7 @@ const app = express();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: 'https://dglfront.onrender.com', // Your frontend port
+    origin: 'https://dgl.warqad.com', // Your frontend port
     credentials: true,
   })
 );
