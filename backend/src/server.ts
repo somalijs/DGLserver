@@ -9,12 +9,11 @@ import { errorHandler, notFound } from './middleware/errorMiddleware.js';
 dotenv.config();
 await connectDB();
 const app = express();
-const allowedValues = process.env.ALLOWED_ORIGINS?.split(',') || [];
 
 app.use(cookieParser());
 app.use(
   cors({
-    origin: allowedValues, // Your frontend port
+    origin: 'https://dglfront.onrender.com', // Your frontend port
     credentials: true,
   })
 );
