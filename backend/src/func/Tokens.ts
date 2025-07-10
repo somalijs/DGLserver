@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { throwError } from './Error.js';
-import { setTokenType } from '../types/Tokens.js';
+
 import { ExpressRequest, ExpressResponse } from '../types/Express.js';
 type Props = {
   name: string;
